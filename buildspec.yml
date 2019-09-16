@@ -10,7 +10,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=902904814612.dkr.ecr.ap-south-1.amazonaws.com/flask-app-ci-cd
+      - REPOSITORY_URI=902904814612.dkr.ecr.ap-south-1.amazonaws.com/flask-ci-cd-application
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
