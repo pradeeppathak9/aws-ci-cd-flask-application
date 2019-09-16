@@ -1,8 +1,11 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+FROM 902904814612.dkr.ecr.ap-south-1.amazonaws.com/flask-ci-cd-base-image
+
+ENV PORT=80
+
+EXPOSE $PORT
+
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+
+CMD ["python", "app.py"]
