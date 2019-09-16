@@ -1,8 +1,7 @@
 FROM 902904814612.dkr.ecr.ap-south-1.amazonaws.com/flask-ci-cd-base-image
 
-ENV PORT=80
-
-EXPOSE $PORT
+ENV PORT=5000
+EXPOSE $5000
 
 COPY . /app
 WORKDIR /app
